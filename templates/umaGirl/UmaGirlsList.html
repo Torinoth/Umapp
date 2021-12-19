@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block Content %}
+    <div class="row">
+
+        {% for umagirl in umagirl_list %}
+            <div class="col-md-4 col-lg-3">
+                {{ umagi.name }}
+                <div class="card">
+                    <a href="{{ umagirl.get_absolute_url }}">
+                        <img class="card-img-top" src="/media/{{ umagirl.icon }}" alt="{{ umagirl.name }}">
+                    </a>
+                    <div class="card-body">
+                        <p class="card-text">{{ umagirl.name }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+{% endblock %}

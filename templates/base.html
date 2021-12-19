@@ -1,0 +1,52 @@
+<!doctype html>
+{% load static %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='Full' %}
+
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+
+    <title>ウマ娘管理APP</title>
+</head>
+<header>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">ウマ娘管理APP</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home<span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'umapp:UmaGirlList' %}">ウマ娘一覧</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+</header>
+
+<body>
+<div class="container mt-3 mb-3">
+    {% block Content %}
+    {% endblock Content %}
+</div>
+</body>
+
+
+<footer>
+    <nav class="navbar fixed-bottom navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">aaa</a>
+    </nav>
+</footer>
+</html>
