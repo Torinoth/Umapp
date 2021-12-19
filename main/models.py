@@ -92,6 +92,6 @@ class UmaGirl(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            n = self.nameEN.replace(' ','_')
+            n = self.nameEN.replace(' ', '_')
             self.slug = slugify(n)
         return super().save(*args, **kwargs)

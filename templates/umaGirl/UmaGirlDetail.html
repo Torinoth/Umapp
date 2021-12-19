@@ -1,5 +1,47 @@
 {% extends "base.html" %}
 
 {% block Content %}
-    a
+    <div class="row">
+        <div class="col-6">
+            <img class="card-img" src="/media/{{ umagirl.draftImage }}" alt="{{ umagirl.name }}">
+        </div>
+        <div class="col-6">
+            <h5>{{ umagirl.nameEN }}</h5>
+            <h3>{{ umagirl.name }}</h3>
+            <hr>
+            <div class="row">
+                <div class="col-4">
+                    誕生日
+                </div>
+                <div class="col-8">
+                    {{ umagirl.birthday | date:"n月j日" }}
+                </div>
+
+                <div class="col-4">
+                    身長
+                </div>
+                <div class="col-8">
+                    {{ umagirl.height }}cm
+                </div>
+
+                <div class="col-4">
+                    体重
+                </div>
+                <div class="col-8">
+                    {{ umagirl.weight }}
+                </div>
+
+                <div class="col-4">
+                    スリーサイズ
+                </div>
+                <div class="col-8">
+                    B{{ umagirl.breast }}・W{{ umagirl.waist }}・H{{ umagirl.hip }}
+                </div>
+            </div>
+            <hr>
+            {{ umagirl.memo | linebreaksbr }}
+            <hr>
+        </div>
+
+    </div>
 {% endblock %}
